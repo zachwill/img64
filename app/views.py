@@ -6,6 +6,7 @@ application.
 """
 
 import base64
+from urllib import unquote
 from urllib2 import urlopen
 
 from flask import Blueprint, render_template, request, jsonify
@@ -19,8 +20,14 @@ def home():
     """Render website's home page or encode the requested image."""
     query = request.args.get('q')
     if query:
-        return json_encode(query)
+        return json_encode(unquote(query))
     return render_template('home.html')
+
+
+def json_encode(image):
+    """Return a JSON response of the base64 encoded image."""
+    data = encode(image)
+    return jsonify({'data': data})
 
 
 def encode(image):
@@ -33,12 +40,6 @@ def encode(image):
     data_type = "data:%s;base64," % encoding
     data = base64.encodestring(request.read()).replace('\n', '')
     return data_type + data
-
-
-def json_encode(image):
-    """Return a JSON response of the base64 encoded image."""
-    data = encode(image)
-    return jsonify({'data': data})
 
 
 # The functions below should be applicable to all Flask apps.
