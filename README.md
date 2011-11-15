@@ -19,9 +19,9 @@ Usage
 
 For instructions on usage, just [visit the site](http://img64.com).
 
-`[http://img64.com](http://img64.com)`
+[`http://img64.com`](http://img64.com)
 
 To encode images, pass the URL a `q` argument pointing to the image
 link.
 
-`[http://img64.com/?q=https://si0.twimg.com/a/1321379639/phoenix/img/twitter_logo_right.png](http://img64.com/?q=https://si0.twimg.com/a/1321379639/phoenix/img/twitter_logo_right.png)`
+[`http://img64.com/?q=https://si0.twimg.com/a/1321379639/phoenix/img/twitter_logo_right.png`](http://img64.com/?q=https://si0.twimg.com/a/1321379639/phoenix/img/twitter_logo_right.png)
