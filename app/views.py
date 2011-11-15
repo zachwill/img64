@@ -29,7 +29,7 @@ def encode(image):
     size = request.headers.get('Content-Length')
     if int(size) > 900000:
         return 'That image is way too big.'
-    encoding = request.headers.get('Content-Type')
+    encoding = request.headers.get('Content-Type').replace(' ', '')
     data_type = "data:%s;base64," % encoding
     data = base64.encodestring(request.read()).replace('\n', '')
     return data_type + data
