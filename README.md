@@ -17,11 +17,25 @@ purpose remains `base64` encoding images.
 Usage
 -----
 
-For instructions on usage, just [visit the site](http://img64.com).
+If you were using a JavaScript library like jQuery, you could get the
+encoding of an external image like so...
+
+```javascript
+    var image = "http://flask.pocoo.org/static/logo.png";
+
+    $.ajax({
+      url: 'http://img64.com/?q=' + encodeURIComponent(image),
+      dataType: 'jsonp'
+    }).then(function (data) {
+      console.log(data)
+    })
+```
+
+For further instructions on usage, just [visit the site](http://img64.com).
 
 [`http://img64.com`](http://img64.com)
 
-To encode images, pass the URL a `q` argument pointing to the image
+To encode images by visiting the site, pass the URL a `q` argument pointing to the image
 link.
 
 [`http://img64.com/?q=https://si0.twimg.com/a/1321379639/phoenix/img/twitter_logo_right.png`](http://img64.com/?q=https://si0.twimg.com/a/1321379639/phoenix/img/twitter_logo_right.png)
