@@ -21,14 +21,14 @@ If you were using a JavaScript library like jQuery, you could get the
 encoding of an external image like so...
 
 ```javascript
-    var image = "http://flask.pocoo.org/static/logo.png";
+var image = "http://flask.pocoo.org/static/logo.png";
 
-    $.ajax({
-      url: 'http://img64.com/?q=' + encodeURIComponent(image),
-      dataType: 'jsonp'
-    }).then(function (data) {
-      console.log(data)
-    })
+$.ajax({
+  url: 'http://img64.com/?q=' + encodeURIComponent(image),
+  dataType: 'jsonp'
+}).then(function (data) {
+  console.log(data)
+})
 ```
 
 For further instructions on usage, just [visit the site](http://img64.com).
