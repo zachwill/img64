@@ -10,12 +10,14 @@ from urllib import unquote
 from urllib2 import urlopen
 
 from flask import Blueprint, render_template, request, jsonify
+from utils import jsonp
 
 views = Blueprint('views', __name__, static_folder='../static',
                   template_folder='../templates')
 
 
 @views.route('/')
+@jsonp
 def home():
     """Render website's home page or encode the requested image."""
     query = request.args.get('q')
